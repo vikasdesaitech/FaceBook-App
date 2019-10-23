@@ -1,0 +1,52 @@
+.cover_photo{
+    height: 380px;
+    background-color:lightgray;
+    width: 100%;
+    align-content: center;   
+}
+
+.pic_base{
+    height: 105%;
+    margin-top: -20px;
+    background-color: lightgray;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: 80%; 
+    background-position:bottom;
+}
+
+#profile_pic{
+    border-radius: 100%;
+    border: 4px solid white;
+    box-shadow: 0 4px 4px gray;
+    box-sizing: border-box; 
+    margin-top: 200px;
+    margin-left: 10%;
+}
+
+#user_name {
+    position: absolute;
+    margin-left: 26%;
+    margin-top: -72px;
+    font-weight: bold;
+    font-size: 30px;
+    color:white;
+}
+
+#postFromProfileTextBox{
+    height: 80px;
+    margin-top: 40px;
+    width: 100%;
+    border-color: cadetblue;
+    border-width: thick;
+    font-size: 20px;
+}
+
+#postFromPageTextBox{
+    height: 80px;
+    margin-top: 4px;
+    width: 100%;
+    border-color: cadetblue;
+    border-width: thick;
+    font-size: 20px;
+}

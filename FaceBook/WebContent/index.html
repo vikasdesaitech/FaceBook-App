@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>My Facebook App</title>
+        <link rel="stylesheet" href="styleSheet.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <!-- This is Navigation Bar-->        
+        <nav class="navbar navbar-default" >
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span manage_pages,class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" id="title-of-APP">My Facebook App</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav" id="Nav_bar_tab">
+                        <li class="active"><a href="#home" data-toggle="tab" aria-expanded="true">Home</a></li>
+                        <li><a href="#pages" data-toggle="tab" aria-expanded="false">Pages</a></li>
+                    </ul> 
+                    <ul class="nav navbar-nav navbar-right">
+                        <fb:login-button 
+                                         id="fb-login-btn"                                         scope="public_profile,email,user_birthday,user_location,user_posts,publish_pages,manage_pages,ads_management" 
+                                         onlogin="checkLoginState();">
+                        </fb:login-button>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">                                       
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" id="setting_dropdown" type="button" data-toggle="dropdown">
+                                <i class="fa fa-cog" style="font-size:24px"></i></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" onclick="logout()">Logout</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <!-- Navigation Bar Ends Here -->
+
+        <div id="initial_window_text"><h3>Log in to view your profile</h3></div>
+        <div id="display_after_login">
+            <div id="myTabContent" class="tab-content">
+                <!-- Home -->
+                <div class="tab-pane fade active in" id="home"> 
+                    <div class="container" >
+                        <div class="row">
+                            <div id="profilePhoto"> </div>
+                            <div id="profile"> </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-0">
+                                    <div id="user_information"> </div>
+                                </div>
+                                <div class="col-md-8 col-md-offset-0">
+                                    <textarea id="postFromProfileTextBox" placeholder="What's on your mind..?"></textarea>
+                                </div>
+                                <div class="col-md-4 col-md-offset-8">
+                                    <button type="submit" class="btn btn-primary" id="postButton"> Post </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="profile_feed"></div>
+                        </div>
+                    </div>     
+                </div>
+                <!-- Home Ends Here-->
+                <!-- Page -->
+                <div class="tab-pane" id="pages"> 
+                    <div class="container" >
+                        <form class="form-group">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-lg-offset-4" id="page_name"><h3>Pages</h3></div> 
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-lg-offset-0"><select class="form-control" id="dropdownForPage" onchange="changePage()"></select></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-lg-offset-0">
+                                    <textarea id="postFromPageTextBox" placeholder="What's on your mind..?"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2 col-lg-offset-10">
+                                    <div class="btn-group" id="publishButton" >
+                                        <a id="PublishPagePost1" class="btn btn-primary">Published</a>
+                                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a id="PublishPagePost2">Published</a></li>
+                                            <li><a id="UnPublishPagePost">Unpublished</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--   <div id="feedButton"> -->
+                            <br />
+                            <ul class="nav nav-tabs nav-tabs-default">
+                                <li class="active"><a onclick="DisplayPublishedPagePost()" href="#published_tab" data-toggle="tab" aria-expanded="true">Published</a></li>
+                                <li ><a onclick="DisplayUnPublishedPagePost()" href="#unpublished_tab" data-toggle="tab" aria-expanded="false">Unpublished</a></li>
+                            </ul>
+                            <div id="Page_feed"></div>
+                        </form>
+                    </div>     
+                </div>  
+                <!-- Page ends here -->
+            </div>
+        </div>
+        <script src="main.js"></script> 
+    </body>
+</html>
